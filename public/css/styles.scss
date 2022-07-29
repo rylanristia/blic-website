@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 50px;
+}
+
+.banner-section {
+    min-height: 100px;
+    width: 100%;
+    .content-banner {
+        color: white;
+        border-radius: 100px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.category-section {
+    .card {
+        .header-card {
+            margin-bottom: -30px;
+        }
+        .card-body {
+            margin-top: -35px;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow-x: scroll;
+            justify-content: center;
+        }
+        .category {
+            height: 50px;
+            width: max-content;
+            flex: none;
+            border: 1px solid gainsboro;
+            border-radius: 10px;
+        }
+    }
+}
+
+.category {
+    &:hover {
+        border-color: blue !important;
+    }
+}
+
+.most-fav-book-section {
+    .section-header {
+        margin-top: 50px;
+    }
+    margin-top: 50px;
+}
+
+.most-recent-book-section {
+    .section-header {
+        margin-top: 50px;
+    }
+    margin-top: 100px;
+}
+
+.image-card {
+    height: 130px;
+    width: 100%;
+}
+
+.section-who-we-are {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-top: 25px;
+    min-height: 200px;
+    .image-who-we-are {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+}
+
+.categories-section {
+    margin-top: 50px;
+}
+
+.footer {
+    min-height: 400px;
+    padding-top: 100px;
+    h3 {
+        color: white;
+    }
+    h6 {
+        color: white;
+    }
+    p {
+        color: white;
+    }
+    a {
+        text-decoration: none;
+        font-style: none;
+        color: white;
+    }
+    .social-media {
+        margin-left: -30px;
+        li {
+            text-decoration: none;
+            list-style: none;
+        }
+    }
+}
+
+.bottom-footer {
+    height: 50px;
+    background-color: #f6f9fc;
+    p {
+        padding-top: 10px;
+    }
+}
