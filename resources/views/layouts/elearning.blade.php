@@ -1,7 +1,7 @@
 <!--
 Note:
 
-ini layouts untuk halaman frontend
+ini layouts untuk halaman admin, manage semua content untuk user
 -->
 
 <!DOCTYPE html>
@@ -16,16 +16,16 @@ ini layouts untuk halaman frontend
         @yield('title')
     </title>
     @include('includes.admin.styles')
-    @include('includes.styles')
 </head>
 
-<body class="g-sidenav-show bg-gray-100" onload="preLoader()">
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<body class="g-sidenav-show dark-version bg-gray-600">
+    {{-- logoutmodal --}}
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel" style="color: #323232 !important">Log out
+                    <h5 class="modal-title" id="logoutModalLabel" style="color: #323232 !important">Log out
                         confirmation</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -49,37 +49,33 @@ ini layouts untuk halaman frontend
             </div>
         </div>
     </div>
-
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
-
-    <div class="min-height-300 bg-primary-dark position-absolute w-100"></div>
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+    @include('includes.admin.sidenav')
     <main class="main-content position-relative border-radius-lg ">
         <!-- Navbar -->
-        @include('includes.navbar')
+        @include('includes.admin.navbar')
         <!-- End Navbar -->
         <div class="container-fluid py-4">
 
             <!-- start the content from here  -->
-            <main>
-                @yield('content')
-            </main>
+            @yield('content')
             <!-- end the content here -->
+            @include('includes.admin.footer')
         </div>
     </main>
-    @include('includes.footer')
     @include('includes.admin.scripts')
     <script>
+        // $(document).ready(function(){
+        // 	$('div#loading').removeAttr('id');
+        // });
         var preloader = document.getElementById("preloader");
+        // window.addEventListener('load', function() {
+        //     preloader.style.display = 'none';
+        // })
 
         function preLoader() {
             preloader.style.display = 'none';
         };
-
-        setInterval(function() {
-            preLoader();
-        }, 3000)
     </script>
 </body>
 

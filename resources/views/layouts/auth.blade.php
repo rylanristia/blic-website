@@ -16,6 +16,7 @@ ini layouts untuk halaman authentication (register dan login)
         Budi Luhur Library
     </title>
     @include('includes.admin.styles')
+    <link rel="stylesheet" href="{{ url('./css/preloader.css') }}">
 </head>
 
 <body class="">

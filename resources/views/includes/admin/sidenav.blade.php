@@ -5,7 +5,7 @@
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="{{ route('dashboard') }}" target="_blank">
-            <span class="ms-1 font-weight-bold">Budi Luhur Library</span>
+            <span class="ms-1 font-weight-bold">Budi Luhur IT Club</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -24,28 +24,19 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Data center</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('books.index') }}">
+                <a class="nav-link " href="">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Books</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="{{ route('book-category.index') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-collection text-info text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Category</span>
+                    <span class="nav-link-text ms-1">Materi</span>
                 </a>
             </li>
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account center</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('users.index') }}">
+                <a class="nav-link " href="">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="bi bi-person-fill" style="color:aqua"></i>
@@ -63,19 +54,5 @@
                 </a>
             </li>
         </ul>
-    </div>
-    <div class="sidenav-footer mx-3 ">
-        <div class="card card-plain shadow-none" id="sidenavCard">
-            <img class="w-50 mx-auto" src="{{ url('./template/assets/img/illustrations/icon-documentation.svg') }}"
-                alt="sidebar_illustration">
-            <div class="card-body text-center p-3 w-100 pt-0">
-                <div class="docs-info">
-                    <h6 class="mb-0">Need help?</h6>
-                    <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
-                </div>
-            </div>
-        </div>
-        <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank"
-            class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
     </div>
 </aside>

@@ -21,11 +21,11 @@
                     </a>
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="nav-link me-2" href=""> About us
+                    <a class="nav-link me-2" href="{{ route('division') }}"> Division
                     </a>
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="nav-link me-2" href=""> Division
+                    <a class="nav-link me-2" href=""> Showcase
                     </a>
                 </li>
                 @auth
@@ -43,15 +43,23 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
                                 <li>
-                                    <a href=""class="dropdown-item py-3">
-                                        Event
+                                    <a href="{{ route('project') }}"class="dropdown-item py-3 nav-link">
+                                        Project
                                     </a>
-                                    <a href=""class="dropdown-item py-3">
-                                        Blog
+                                    <a href="{{ route('news') }}"class="dropdown-item py-3 nav-link">
+                                        News
                                     </a>
                                 </li>
                             </ul>
                         </div>
+                    </a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link me-2" href="{{ route('about-us') }}"> About us
+                    </a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link me-2" href=""> Structure
                     </a>
                 </li>
                 @auth
@@ -63,19 +71,26 @@
                                     <strong style="font-size: 14px">{{ Auth::user()->name }}</strong>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                    @if (Auth::user()->roles == 'admin')
+                                    @if (Auth::user()->type == 'student')
+                                        <li>
+                                            <a href="" class="dropdown-item py-3"><i
+                                                    class="bi bi-mortarboard me-1"></i>E-learning</a>
+                                        </li>
+                                    @endif
+                                    @if (Auth::user()->level == 'admin')
                                         <li>
                                             <a href="{{ route('dashboard') }}" class="dropdown-item py-3"><i
-                                                    class="bi bi-speedometer2"></i> Dashboard</a>
+                                                    class="bi bi-speedometer2"></i>
+                                                Admin page</a>
                                         </li>
                                     @endif
                                     <li>
                                         <form action="{{ url('logout') }}" method="POST">
                                             @csrf
-                                            <a class="dropdown-item" href="{{ route('logout') }}">
-                                                <button class="btn btn-danger" type="submit" style="width: 100%;">
-                                                    Logout
-                                                </button>
+                                            <a href="{{ route('logout') }}">
+                                                <button class="dropdown-item py-3"
+                                                    style="color: red; background-color:transparent; width: 100%;"><i
+                                                        class="bi bi-door-open-fill me-1" type="submit"></i>Logout</button>
                                             </a>
                                         </form>
                                     </li>
