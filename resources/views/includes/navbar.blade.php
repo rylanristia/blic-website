@@ -34,25 +34,14 @@
                         </a>
                     </li>
                 @endauth
-                <li class="nav-item ms-3">
-                    <a class="nav-link me-2" href="" style="margin-top: -13px">
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle " data-bs-toggle="dropdown"
-                                id="navbarDropdownMenuLink2" style="box-shadow: none; font-size:14px">
-                                What's new?
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                <li>
-                                    <a href="{{ route('project') }}"class="dropdown-item py-3 nav-link">
-                                        Project
-                                    </a>
-                                    <a href="{{ route('news') }}"class="dropdown-item py-3 nav-link">
-                                        News
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                <li class="nav-item dropdown ms-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         What's new?
                     </a>
+                    <ul class="dropdown-menu" style="overflow: hidden; margin-top: 13px !important;">
+                        <li><a class="dropdown-item py-2" href="{{ route('project') }}">Project</a></li>
+                        <li><a class="dropdown-item py-2" href="{{ route('news') }}">News</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item ms-3">
                     <a class="nav-link me-2" href="{{ route('about-us') }}"> About us
@@ -63,40 +52,38 @@
                     </a>
                 </li>
                 @auth
-                    <li class="nav-item ms-3">
-                        <a class="nav-link me-2" href="" style="margin-top: -13px">
-                            <div class="dropdown">
-                                <a href="#" class="dropdown-toggle " data-bs-toggle="dropdown"
-                                    id="navbarDropdownMenuLink2" style="box-shadow: none">
-                                    <strong style="font-size: 14px">{{ Auth::user()->name }}</strong>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                    @if (Auth::user()->type == 'student')
-                                        <li>
-                                            <a href="" class="dropdown-item py-3"><i
-                                                    class="bi bi-mortarboard me-1"></i>E-learning</a>
-                                        </li>
-                                    @endif
-                                    @if (Auth::user()->level == 'admin')
-                                        <li>
-                                            <a href="{{ route('dashboard') }}" class="dropdown-item py-3"><i
-                                                    class="bi bi-speedometer2"></i>
-                                                Admin page</a>
-                                        </li>
-                                    @endif
-                                    <li>
-                                        <form action="{{ url('logout') }}" method="POST">
-                                            @csrf
-                                            <a href="{{ route('logout') }}">
-                                                <button class="dropdown-item py-3"
-                                                    style="color: red; background-color:transparent; width: 100%;"><i
-                                                        class="bi bi-door-open-fill me-1" type="submit"></i>Logout</button>
-                                            </a>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <strong style="font-size: 14px">{{ Auth::user()->name }}</strong>
                         </a>
+                        <ul class="dropdown-menu" style="overflow: hidden; margin-top: 13px !important;">
+                            @if (Auth::user()->type == 'student')
+                                <li>
+                                    <a class="dropdown-item py-2"  href="#">
+                                        <i class="bi bi-mortarboard me-1"></i>
+                                        E-learning
+                                    </a>
+                                </li>
+                            @endif
+                            @if (Auth::user()->level == 'admin')
+                                <li>
+                                    <a class="dropdown-item py-2" href="{{ route('news') }}">
+                                        <i class="bi bi-speedometer2 me-1"></i>
+                                        Admin page
+                                    </a>
+                                </li>
+                            @endif
+                            <li>
+                                <form action="{{ url('logout') }}" method="POST">
+                                    @csrf
+                                    <a href="{{ route('logout') }}">
+                                        <button class="dropdown-item py-2"
+                                            style="color: red; background-color:transparent; width: 100%;"><i
+                                                class="bi bi-door-open-fill me-1" type="submit"></i>Logout</button>
+                                    </a>
+                                </form>
+                            </li>
+                        </ul>
                     </li>
                 @endauth
                 @guest
